@@ -12,7 +12,7 @@ const Skills = () => {
 
   ]
 
-  const tools = ["VS Code", "Postman", "Docker", "Git", "Linux", "AWS", "Google Cloud"]
+  const tools = ["VS Code", "Postman", "Docker", "Git", "Linux", "AWS", "Google Cloud", "Microst365", "Gemini API", "Canva", "Photoshop"]
 
   return (
     <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
