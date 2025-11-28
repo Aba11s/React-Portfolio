@@ -13,8 +13,18 @@ const About = () => {
               I'm a passionate Computer Science student with a strong interest in artificial intelligence 
               and research. Currently exploring web technologies, machine learning, and cybersecurity.
             </p>
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               When I'm not coding, you can find me gaming, drawing, or having a cup of coffee.
+            </p>
+            <p className="text">
+              <a 
+                href="https://docs.google.com/document/d/1C70VAD3bdeTF8PKxhK5Ke-cViAXzJTa0tFjyGCVrAh8/edit?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline font-medium"
+              >
+                Portfolio
+              </a>
             </p>
           </div>
           

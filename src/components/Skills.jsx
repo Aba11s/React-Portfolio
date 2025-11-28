@@ -2,17 +2,17 @@ import React from 'react'
 
 const Skills = () => {
   const technicalSkills = [
-    { name: "Python", level: 90 },
-    { name: "Java", level: 85 },
-    { name: "C#", level: 75 },
+    { name: "Python", level: 80 },
+    { name: "Java", level: 75 },
+    { name: "C#", level: 70 },
     { name: "C/C++", level: 55 },
     { name: "Rust", level: 50},
     { name: "SQL", level: 60},
-    { name: "HTML/CSS/JS", level: 65 },
+    { name: "HTML/CSS/JS", level: 60 },
 
   ]
 
-  const tools = ["VS Code", "Postman", "Docker", "Git", "Linux", "AWS", "Google Cloud", "Microst365", "Gemini API", "Canva", "Photoshop"]
+  const tools = ["VS Code", "Jetbrains", "Postman", "Docker", "Git", "Linux", "AWS", "Google Cloud", "Microsoft Office", "Canva", "Photoshop"]
 
   return (
     <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">

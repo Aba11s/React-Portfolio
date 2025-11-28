@@ -42,7 +42,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              
+              {/*
               <div className="flex space-x-4">
                 <a href="#" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium">
                   <i className="fab fa-github mr-1"></i> Code
@@ -51,6 +51,7 @@ const Projects = () => {
                   <i className="fas fa-external-link-alt mr-1"></i> Demo
                 </a>
               </div>
+              */}
             </div>
           ))}
         </div>

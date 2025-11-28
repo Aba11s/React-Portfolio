@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const Contact = () => {
     subject: '',
     message: ''
   })
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -15,11 +17,34 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! I\'ll get back to you soon.')
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setIsLoading(true)
+
+    try {
+      // REPLACE THESE WITH YOUR ACTUAL IDs FROM EMAILJS:
+      const result = await emailjs.send(
+        'service_cvxickc',      // From Email Services tab
+        'template_x0e7dd8',     // From Email Templates tab  
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        },
+        'sMrDIyZ7CbxGOlOBi'       // From Account → API Keys
+      )
+      
+      if (result.text === 'OK') {
+        alert('🎉 Your message was sent! ')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+      alert('❌ Failed to send message. Please email me directly at bellion2609@gmail.com')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -41,7 +66,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium dark:text-white">Email</p>
-                  <a href="mailto:your.email@university.edu" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                  <a href="mailto:bellion2609@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                     bellion2609@gmail.com
                   </a>
                 </div>
@@ -53,7 +78,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium dark:text-white">GitHub</p>
-                  <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                  <a href="https://github.com/Aba11s" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                     github.com/Aba11s
                   </a>
                 </div>
@@ -75,7 +100,8 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition"
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition disabled:opacity-50"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -91,7 +117,8 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition"
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition disabled:opacity-50"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -108,7 +135,8 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition"
+                  disabled={isLoading}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition disabled:opacity-50"
                   placeholder="What's this about?"
                 />
               </div>
@@ -124,16 +152,25 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition"
+                  disabled={isLoading}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white transition disabled:opacity-50"
                   placeholder="Tell me about your project or opportunity..."
                 ></textarea>
               </div>
               
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-lg hover:shadow-xl font-medium"
+                disabled={isLoading}
+                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-lg hover:shadow-xl font-medium disabled:opacity-50 disabled:transform-none disabled:hover:shadow-lg"
               >
-                Send Message
+                {isLoading ? (
+                  <span className="flex items-center justify-center">
+                    <i className="fas fa-spinner fa-spin mr-2"></i>
+                    Sending...
+                  </span>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
           </div>
