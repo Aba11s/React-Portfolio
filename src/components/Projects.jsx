@@ -10,7 +10,7 @@ const Projects = () => {
     {
       name: "AI assistant chatbot",
       description: "Implemented a simple AI chatbot on an E-commerce app",
-      technologies: ["Python", "TensorFlow", "Flask", "React"],
+      technologies: ["Python", "Flask", "React"],
     }
   ]
 

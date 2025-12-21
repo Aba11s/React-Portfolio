@@ -15,7 +15,7 @@ const Experience = () => {
       title: "Data Analyst Intern",
       organization: "Asosiasi Pembangkit Listrik Batu Bara Indonesia (APLBI)",
       period: "March 2023 - May 2023",
-      description: "Hands on work experience as a data analyst. Analyzed, formatted, and transformed data on Microsoft Excel. Assisted the team in analyzing annual and monthly power-plant data. Created an HR dashboard on Excel.",
+      description: "Hands on work experience as a data analyst. Analyzed, formatted, and transformed data on Microsoft Excel. Assisted the team in analyzing annual and monthly power-plant data. Created an interactive HR dashboard on Excel.",
       technologies: ["Excel", "Powerpoint"]
     },
     {

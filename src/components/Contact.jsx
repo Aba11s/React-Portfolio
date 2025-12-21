@@ -22,17 +22,16 @@ const Contact = () => {
     setIsLoading(true)
 
     try {
-      // REPLACE THESE WITH YOUR ACTUAL IDs FROM EMAILJS:
       const result = await emailjs.send(
-        'service_cvxickc',      // From Email Services tab
-        'template_x0e7dd8',     // From Email Templates tab  
+        'service_cvxickc',      
+        'template_x0e7dd8',     
         {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message
         },
-        'sMrDIyZ7CbxGOlOBi'       // From Account → API Keys
+        'sMrDIyZ7CbxGOlOBi'      
       )
       
       if (result.text === 'OK') {
