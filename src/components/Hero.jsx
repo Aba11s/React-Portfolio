@@ -1,5 +1,5 @@
 import React from 'react'
-import profileImage from '../assets/profile-2024.png' 
+import profileImage from '../assets/profile-2026.jpg' 
 
 const Hero = () => {
 
@@ -10,16 +10,15 @@ const Hero = () => {
     }
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 pt-16">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-t from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 pt-16">
       <div className="max-w-4xl mx-auto px-4 text-center">
-        {/* Profile Image Placeholder */}
         <div className="w-56 h-56 mx-auto mb-8 rounded-full border-4 border-white dark:border-gray-800 shadow-lg overflow-hidden">
           <img 
             src={profileImage} 
             alt="Thats me!"
             className="w-full h-full object-cover"
           />
-        </div>
+        </div>  
         
         <h1 className="text-5xl md:text-7xl font-bold mb-6 dark:text-white">
           Hi, I'm <span className="text-blue-600 dark:text-blue-400">Bel</span>

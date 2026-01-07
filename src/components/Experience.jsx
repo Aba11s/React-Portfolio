@@ -7,7 +7,7 @@ const Experience = () => {
       title: "Published Research Paper",
       organization: "International Seminar on Research of Information Technology and Information Systems (ISRITI)",
       period: "December 2025",
-      description: "Co-authored a paper on machine learning application in Counter-Strike 2 ",
+      description: "First-authored and lead the development of a paper on machine learning application in Counter-Strike 2 ",
       technologies: ["Python"]
     },
     {
